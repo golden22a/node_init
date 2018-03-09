@@ -77,7 +77,9 @@ var Schema = mongoose.Schema;
 var $model = mongoose.model('$model', "$model"Schema);
 module.exports = $model;
 " >> "models/$model.js"
-echo "module.exports = {
+echo "/* adding model $model to index.js */
+var $model = require('./$model');
+module.exports = {
     $model: $model
 };">> 'models/index.js';
 else
