@@ -74,7 +74,7 @@ var Schema = mongoose.Schema;
   echo "$a:String" >> "models/$model.js"
   echo "});
 
-var $model = mongoose.model('$model', $model);
+var $model = mongoose.model('$model', "$model"Schema);
 module.exports = $model;
 " >> "models/$model.js"
 echo "module.exports = {
