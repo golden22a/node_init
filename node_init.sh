@@ -3,8 +3,8 @@
 if [ $1 != '-g' ];  then
 echo "creating new project ";
 mkdir  $1
-echo "making basinc structer /views && /models"
-mkdir -p  "$1/views" "$1/views/scripts" "$1/views/styles" "$1/models"
+echo "making basinc structer /views && /models && /public"
+mkdir -p  "$1/views" "$1/public" "$1/public/scripts" "$1/public/styles" "$1/models"
 echo "creating models/index.js"
 echo "var mongoose = require('mongoose');
 
@@ -15,8 +15,8 @@ mongoose.connect('mongodb://localhost/$1', {promiseLibrary: global.Promise});
 
 ">> "$1/models/index.js"
 echo "creating script and style"
-touch "$1/views/scripts/app.js"
-touch "$1/views/styles/style.css"
+touch "$1/public/scripts/app.js"
+touch "$1/public/styles/style.css"
 echo "server .js"
 touch "$1/server.js"
 echo "json package"
